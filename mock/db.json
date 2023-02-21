@@ -1,0 +1,100 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "superhero": "Batman",
+      "publisher": "DC Comics",
+      "alter_ego": "Bruce Wayne"
+    },
+    {
+      "alter_ego": "Clark Kent",
+      "publisher": "DC Comics",
+      "superhero": "Superman",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "superhero": "Flash",
+      "publisher": "DC Comics",
+      "alter_ego": "Jay Garrick"
+    },
+    {
+      "id": 4,
+      "superhero": "Green Lantern",
+      "publisher": "DC Comics",
+      "alter_ego": "Alan Scott"
+    },
+    {
+      "id": 5,
+      "superhero": "Green Arrow",
+      "publisher": "DC Comics",
+      "alter_ego": "Oliver Queen"
+    },
+    {
+      "id": 6,
+      "superhero": "Wonder Woman",
+      "publisher": "DC Comics",
+      "alter_ego": "Princess Diana"
+    },
+    {
+      "id": 7,
+      "superhero": "Martian Manhunter",
+      "publisher": "DC Comics",
+      "alter_ego": "J'onn J'onzz"
+    },
+    {
+      "id": 8,
+      "superhero": "Robin/Nightwing",
+      "publisher": "DC Comics",
+      "alter_ego": "Dick Grayson"
+    },
+    {
+      "id": 11,
+      "superhero": "Spider Man",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Peter Parker"
+    },
+    {
+      "id": 13,
+      "alter_ego": "Tony Stark",
+      "publisher": "Marvel Comics",
+      "superhero": "Iron Man"
+    },
+    {
+      "id": 14,
+      "superhero": "Thor",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Thor Odinson"
+    },
+    {
+      "id": 15,
+      "superhero": "Hulk",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Bruce Banner"
+    },
+    {
+      "id": 16,
+      "superhero": "Wolverine",
+      "publisher": "Marvel Comics",
+      "alter_ego": "James Howlett"
+    },
+    {
+      "id": 17,
+      "superhero": "Daredevil",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Matthew Michael Murdock"
+    },
+    {
+      "id": 18,
+      "superhero": "Hawkeye",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Clinton Francis Barton"
+    },
+    {
+      "id": 19,
+      "superhero": "Cyclops",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Scott Summers"
+    }
+  ]
+}

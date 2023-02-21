@@ -1,0 +1,27 @@
+<mat-form-field class="full-width">
+  <mat-label>{{ placeholder }}</mat-label>
+  <input
+    matInput
+    type="text"
+    [(ngModel)]="searchValue"
+    (keyup.enter)="search.emit(searchValue)"
+  />
+  <button
+    matSuffix
+    mat-icon-button
+    aria-label="Search"
+    (click)="search.emit(searchValue)"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <button
+    *ngIf="searchValue"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="searchValue = ''; clear.emit()"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-form-field>

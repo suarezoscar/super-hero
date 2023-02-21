@@ -1,0 +1,15 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50em;
+}
+
+button {
+    margin: 1em 0;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api-json:
+    image: clue/json-server
+    restart: always
+    volumes:
+      - ./mock/:/data/
+    ports:
+      - 3000:80
+  angular:
+    build:
+      context: ./
+      dockerfile: DockerFile
+    ports:
+      - "80:80"

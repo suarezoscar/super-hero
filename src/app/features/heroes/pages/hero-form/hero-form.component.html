@@ -1,0 +1,44 @@
+<form [formGroup]="formGroup" (submit)="submit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Superhero</mat-label>
+    <input matInput formControlName="superhero" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Publisher</mat-label>
+    <mat-select
+      formControlName="publisher"
+      placeholder="Publisher"
+      floatlLabel="never"
+    >
+      <mat-option value="DC Comics">DC Comics</mat-option>
+      <mat-option value="Marvel Comics">Marvel Comics</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Alter ego</mat-label>
+    <input formControlName="alter_ego" matInput />
+  </mat-form-field>
+
+  <button
+    [disabled]="formGroup.invalid"
+    mat-raised-button
+    color="primary"
+    type="submit"
+  >
+    Save
+  </button>
+  <button
+    [routerLink]="['/heroes']"
+    color="accent"
+    mat-raised-button
+    type="button"
+  >
+    Back
+  </button>
+
+  <div class="spinner-container">
+    <mat-spinner [diameter]="40" *ngIf="loadingService.loading$ | async"></mat-spinner>
+  </div>
+</form>

@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 import { map, Observable, Subscription, tap } from 'rxjs';
 import { Hero } from 'src/app/core/models/hero.interface';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
-import { LoadingService } from 'src/app/shared/loading.service';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 import { HeroService } from '../../services/hero.service';
 
 @Component({

@@ -10,7 +10,3 @@ body {
     background-image: url(~src/assets/img/bg.jpg);
     background-size: cover;
 }
-
-.full-width {
-    width: 100%;
-}

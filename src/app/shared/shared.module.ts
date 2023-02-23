@@ -14,9 +14,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderComponent } from './components/loader/loader.component';
+import { UppercaseDirective } from './directives/uppercase.directive';
 
 @NgModule({
-  declarations: [ConfirmDialogComponent, SearchInputComponent, LoaderComponent],
+  declarations: [ConfirmDialogComponent, SearchInputComponent, LoaderComponent, UppercaseDirective],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -43,6 +44,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     MatProgressBarModule,
     SearchInputComponent,
     LoaderComponent,
+    UppercaseDirective,
     MatProgressSpinnerModule,
   ],
 })

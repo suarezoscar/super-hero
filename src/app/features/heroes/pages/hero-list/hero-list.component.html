@@ -10,7 +10,7 @@
     <!-- SuperHero Column -->
     <ng-container matColumnDef="superhero">
       <th mat-header-cell *matHeaderCellDef>SuperHero</th>
-      <td mat-cell *matCellDef="let element">{{ element.superhero }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.superhero | uppercase }}</td>
     </ng-container>
 
     <!-- Publisher Column -->

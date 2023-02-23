@@ -9,7 +9,7 @@
     {
       "alter_ego": "Clark Kent",
       "publisher": "DC Comics",
-      "superhero": "Superman",
+      "superhero": "SUPERMAN",
       "id": 2
     },
     {
@@ -107,6 +107,12 @@
       "publisher": "DC Comics",
       "superhero": "dsadas",
       "id": 21
+    },
+    {
+      "alter_ego": "dssdadsa",
+      "publisher": "DC Comics",
+      "superhero": "SADSAD",
+      "id": 22
     }
   ]
 }

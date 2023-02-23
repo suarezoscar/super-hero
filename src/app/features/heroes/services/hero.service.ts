@@ -5,7 +5,8 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, Observable, distinctUntilChanged, throwError } from 'rxjs';
+import { catchError, Observable, distinctUntilChanged } from 'rxjs';
+import HttpStatusCode from 'src/app/core/constants/httpStatusCode';
 import { Hero } from 'src/app/core/models/hero.interface';
 import { API } from 'src/environments/environment';
 
@@ -103,8 +104,13 @@ export class HeroService {
     message: string,
     err: HttpErrorResponse
   ): Observable<T> {
-    console.error(method, err.message);
-    this.snackBar.open(message, 'Close', { duration: 7000 });
-    return throwError(() => err);
+    console.error('LOG_ERROR ->', method, err);
+    switch (err.status) {
+      case HttpStatusCode.INTERNAL_SERVER_ERROR: // do someting
+      default:
+        this.snackBar.open(message, 'Close', { duration: 7000 });
+    }
+
+    return new Observable<T>();
   }
 }

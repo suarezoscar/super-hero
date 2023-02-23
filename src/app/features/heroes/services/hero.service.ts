@@ -4,7 +4,8 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap, distinctUntilChanged } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { catchError, Observable, distinctUntilChanged, throwError } from 'rxjs';
 import { Hero } from 'src/app/core/models/hero.interface';
 import { API } from 'src/environments/environment';
 
@@ -12,7 +13,7 @@ import { API } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class HeroService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
   private readonly url = API.BASE_URL + '/heroes';
 
@@ -34,8 +35,8 @@ export class HeroService {
         catchError((err: HttpErrorResponse) =>
           this.handleError<HttpResponse<Hero[]>>(
             'getHeroes',
-            err,
-            new HttpResponse<Hero[]>()
+            `Oops! Something went wrong ☹️. Try Again later.`,
+            err
           )
         )
       );
@@ -46,7 +47,11 @@ export class HeroService {
       .get<Hero>(`${this.url}/${id}`)
       .pipe(
         catchError((error) =>
-          this.handleError<Hero>('getHeroById', error, {} as Hero)
+          this.handleError<Hero>(
+            'getHeroById',
+            `Oops! Something went wrong ☹️. Try Again later.`,
+            error
+          )
         )
       );
   }
@@ -56,7 +61,11 @@ export class HeroService {
       .delete<Hero>(`${this.url}/${id}`)
       .pipe(
         catchError((error) =>
-          this.handleError<Hero>('getHeroById', error, {} as Hero)
+          this.handleError<Hero>(
+            'getHeroById',
+            `Oops! hero can't be deleted ☹️. Try Again later.`,
+            error
+          )
         )
       );
   }
@@ -66,7 +75,11 @@ export class HeroService {
       .post(this.url, hero)
       .pipe(
         catchError((error) =>
-          this.handleError<Hero>('postHero', error, {} as Hero)
+          this.handleError<Hero>(
+            'postHero',
+            `Oops! ${hero.superhero} can't be created ☹️. Try Again later.`,
+            error
+          )
         )
       );
   }
@@ -76,17 +89,22 @@ export class HeroService {
       .put(`${this.url}/${id}`, hero)
       .pipe(
         catchError((error) =>
-          this.handleError<Hero>('putHero', error, {} as Hero)
+          this.handleError<Hero>(
+            'putHero',
+            `Oops! ${hero.superhero} can't be edited ☹️. Try Again later.`,
+            error
+          )
         )
       );
   }
 
   private handleError<T>(
     method: string,
-    err: HttpErrorResponse,
-    response: T
+    message: string,
+    err: HttpErrorResponse
   ): Observable<T> {
     console.error(method, err.message);
-    return of(response);
+    this.snackBar.open(message, 'Close', { duration: 7000 });
+    return throwError(() => err);
   }
 }

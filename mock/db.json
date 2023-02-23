@@ -25,10 +25,10 @@
       "alter_ego": "Alan Scott"
     },
     {
-      "id": 5,
-      "superhero": "Green Arrow",
+      "alter_ego": "Oliver Queen",
       "publisher": "DC Comics",
-      "alter_ego": "Oliver Queen"
+      "superhero": "Green Arrow",
+      "id": 5
     },
     {
       "alter_ego": "Princess Diana",

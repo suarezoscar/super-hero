@@ -38,7 +38,5 @@
     Back
   </button>
 
-  <div class="spinner-container">
-    <mat-spinner [diameter]="40" *ngIf="loadingService.loading$ | async"></mat-spinner>
-  </div>
+  <app-loader type="spinner"></app-loader>
 </form>

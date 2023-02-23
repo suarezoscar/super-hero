@@ -31,10 +31,10 @@
       "alter_ego": "Oliver Queen"
     },
     {
-      "id": 6,
-      "superhero": "Wonder Woman",
+      "alter_ego": "Princess Diana",
       "publisher": "DC Comics",
-      "alter_ego": "Princess Diana"
+      "superhero": "Wonder Woman",
+      "id": 6
     },
     {
       "id": 7,
@@ -95,6 +95,18 @@
       "superhero": "Cyclops",
       "publisher": "Marvel Comics",
       "alter_ego": "Scott Summers"
+    },
+    {
+      "alter_ego": "sax",
+      "publisher": "DC Comics",
+      "superhero": "xa",
+      "id": 20
+    },
+    {
+      "alter_ego": "dsadas",
+      "publisher": "DC Comics",
+      "superhero": "dsadas",
+      "id": 21
     }
   ]
 }

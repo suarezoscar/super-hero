@@ -1,26 +1,18 @@
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable, Subscription, tap } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { Hero } from 'src/app/core/models/hero.interface';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
-import { LoadingService } from 'src/app/shared/services/loading.service';
 import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
 })
-export class HeroListComponent implements OnInit, AfterViewChecked {
+export class HeroListComponent implements OnInit {
   displayedColumns: string[] = [
     'superhero',
     'publisher',
@@ -39,14 +31,8 @@ export class HeroListComponent implements OnInit, AfterViewChecked {
     private heroService: HeroService,
     public dialog: MatDialog,
     private snackBar: MatSnackBar,
-    private route: ActivatedRoute,
-    public loadingService: LoadingService,
-    private changeDetector: ChangeDetectorRef
+    private route: ActivatedRoute
   ) {}
-
-  ngAfterViewChecked(): void {
-    this.changeDetector.detectChanges();
-  }
 
   ngOnInit(): void {
     const { heroes, totalCount } = this.route.snapshot.data['resolved'];

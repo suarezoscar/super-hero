@@ -1,0 +1,13 @@
+<div *ngIf="type === 'spinner'" class="spinner-container">
+  <mat-spinner
+    [diameter]="40"
+    *ngIf="loadingService.loading$ | async"
+  ></mat-spinner>
+</div>
+
+<ng-container *ngIf="type === 'progress'">
+  <mat-progress-bar
+    mode="indeterminate"
+    *ngIf="loadingService.loading$ | async"
+  ></mat-progress-bar>
+</ng-container>

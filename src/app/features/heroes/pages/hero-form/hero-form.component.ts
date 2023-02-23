@@ -1,15 +1,9 @@
-import {
-  AfterViewChecked,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeroFormGroup } from 'src/app/core/models/hero.interface';
-import { LoadingService } from 'src/app/shared/services/loading.service';
 import { HeroService } from '../../services/hero.service';
 
 @Component({
@@ -17,7 +11,7 @@ import { HeroService } from '../../services/hero.service';
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.css'],
 })
-export class HeroFormComponent implements OnInit, AfterViewChecked {
+export class HeroFormComponent implements OnInit {
   formGroup!: FormGroup<HeroFormGroup>;
 
   constructor(
@@ -25,23 +19,15 @@ export class HeroFormComponent implements OnInit, AfterViewChecked {
     public dialog: MatDialog,
     private snackBar: MatSnackBar,
     private route: ActivatedRoute,
-    private router: Router,
-    public loadingService: LoadingService,
-    private changeDetector: ChangeDetectorRef
+    private router: Router
   ) {}
-
-  ngAfterViewChecked(): void {
-    this.changeDetector.detectChanges();
-  }
 
   id!: number;
 
   ngOnInit(): void {
     const { superhero, publisher, alter_ego, id } =
       this.route.snapshot?.data['resolved'] || {};
-
     this.id = id;
-
     this.formGroup = new FormGroup({
       superhero: new FormControl(superhero, Validators.required),
       publisher: new FormControl(publisher, Validators.required),

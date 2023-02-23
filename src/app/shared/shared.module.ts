@@ -13,9 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
-  declarations: [ConfirmDialogComponent, SearchInputComponent],
+  declarations: [ConfirmDialogComponent, SearchInputComponent, LoaderComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -41,6 +42,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSelectModule,
     MatProgressBarModule,
     SearchInputComponent,
+    LoaderComponent,
     MatProgressSpinnerModule,
   ],
 })

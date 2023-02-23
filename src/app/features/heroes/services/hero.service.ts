@@ -6,6 +6,7 @@ import {
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap, distinctUntilChanged } from 'rxjs';
 import { Hero } from 'src/app/core/models/hero.interface';
+import { API } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ import { Hero } from 'src/app/core/models/hero.interface';
 export class HeroService {
   constructor(private http: HttpClient) {}
 
-  private readonly url = 'http://localhost:3000/heroes';
+  private readonly url = API.BASE_URL + '/heroes';
 
   get(
     _page = 0,
